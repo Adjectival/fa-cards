@@ -1,17 +1,3 @@
-@import 'app/bourbon/bourbon.scss';
-@import 'app/saffron/saffron.scss';
-
 body {
     background-color: darkorange;
-}
-
-.btn {
-    color: ivory;
-    background-color: darkturquoise;
-        &:hover {
-            @include pulsate();
-        }
-       &:active {
-           @include bounce();
-       }
 }

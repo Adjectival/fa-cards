@@ -1,0 +1,20 @@
+@import 'bourbon/bourbon.scss';
+@import 'saffron/saffron.scss';
+
+h1 {
+    text-align: center;
+}
+
+div {
+    text-align: center;
+}
+.btn {
+    color: ivory;
+    background-color: darkturquoise;
+        &:hover {
+            @include pulsate();
+        }
+       &:active {
+           @include bounce();
+       }
+}
