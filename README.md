@@ -1,10 +1,12 @@
-# Angular Boilerplate :flashlight:
+# Fa-Cards :ok:
 
-You can use FontAwesome 5, Bootstrap 4, Bourbon & Saffron right off the bat.
+Toolit for FontAwesome5 icons, will allow masking, multiple icons stacked, etc. WIP.
+
+API built from Mongo to allow saving creations a stretch goal.
 
 ## How To
 
-`cd ng-boiler && npm i && ng serve`
+`cd fa-cards && npm i && ng serve`
 
 ## License = MIT
 :computer::recycle:
