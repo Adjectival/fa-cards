@@ -13,10 +13,9 @@ import { Component } from '@angular/core';
         'text-success':isHappy === true,
         'text-danger':isHappy === false
       }"
-      >{{main}} inside {{mask}}</h3>
-      <h3>Ternary expression w/ Unicode Happiness Toggle
+      >{{main}} inside {{mask}}
       <span>{{ isHappy ? '😂' : '🤨' }}</span>
-      <button (click)="happyBtnClick()">Change Happiness</button>
+      <button class="btn" (click)="happyBtnClick()">Change Class!</button>
     </h3>
       </div>
     
