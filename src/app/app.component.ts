@@ -8,10 +8,20 @@ import { Component } from '@angular/core';
   
     <div class="card p-3 col-8 offset-2">
     <div class="fa-3x">
-      <i class="fas fa-star" data-fa-transform="shrink-10 up-0.1" data-fa-mask="fas fa-cloud"></i>
-    </div>
+      <i class="fas fa-{{main}}" data-fa-transform="shrink-10 up-0.1" data-fa-mask="fas fa-cloud"></i>
+      <h3 [ngClass]="{
+        'text-success':isHappy === true,
+        'text-danger':isHappy === false
+      }"
+      >{{main}} inside {{mask}}</h3>
+      <h3>Ternary expression w/ Unicode Happiness Toggle
+      <span>{{ isHappy ? '😂' : '🤨' }}</span>
+      <button (click)="happyBtnClick()">Change Happiness</button>
+    </h3>
+      </div>
     
-    <input type="text" [value]="main"><label for="main">Main Icon</label>
+    <input type="text" [value]="main"
+      (blur)="handleMain($event)"><label for="main">Main Icon</label>
     <input type="text" [value]="mask"><label for="mask">Mask Icon</label>
     <input type="text" [value]="sizer"><label for="sizer">Size Change</label>
     <input type="text" [value]="upDown"><label for="up">Up/Down Change</label>
@@ -24,7 +34,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   main: string = 'star';
+  handleMain(event: any) {
+    this.main = event.target.value;
+  }
   mask: string = 'cloud';
+  handleMask(event: any) {
+    this.mask = event.target.value;
+  }
   sizer: number = 10;
   upDown: number = 0.1;
+
+  happyBtnClick() {
+    this.isHappy = !this.isHappy;
+  }
+
 }
