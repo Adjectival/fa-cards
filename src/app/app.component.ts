@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   styleUrls: ['./app.component.scss'],
   template: `
-  <h1 class="mt-1">FontAwesome Masker</h1>
+  <h1 class="mt-1">FontAwesome Cards</h1>
   
     <div class="card p-3 col-8 offset-2">
     <div class="fa-3x">
@@ -20,17 +21,13 @@ import { Component } from '@angular/core';
       </p>
       </h4>
       <h3>fas fa-{{test}}
-        <select
-        (change)="iconChange($event.target.value)"
-        class="btn btn-lg"
-        >
-          <option value="heart">heart</option>
-          <option value="ellipsis-v">ellipsis-v</option>
-          <option value="star">star</option>
-        </select>
-        <i [ngClass]="[
-          'fas fa-'+test
-        ]"></i>
+        
+        <i class="{{
+          'fas fa-'+ selectedIcon
+        }}"></i>
+
+        <app-icons></app-icons>
+
         <p>Dynamic class changing for icon still elusive
         </p>
       </h3>
@@ -50,11 +47,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isHappy: boolean = false;
-  
-  test: string = 'heart';
-  iconChange(optionFromMenu) {
-    this.test = event.target.value;
-  }
   
   main: string = 'heart';
   handleMain(event: any) {

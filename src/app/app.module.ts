@@ -4,11 +4,13 @@ import { NgClass } from '@angular/common';
 
 
 import { AppComponent } from './app.component';
+import { IconsComponent } from './icons/icons.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule
